@@ -1,0 +1,11 @@
+{
+  "early_stopping": true,
+  "forced_bos_token_id": 0,
+  "forced_eos_token_id": 2,
+  "length_penalty": 2.0,
+  "max_length": 300,
+  "min_length": 100,
+  "no_repeat_ngram_size": 3,
+  "num_beams": 4,
+  "transformers_version": "4.42.4"
+}
