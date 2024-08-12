@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Article Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .download-link {
+            display: block;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 18px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .article {
+            background-color: #fafafa;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .article h2 {
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        .article p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Current IP: {{ current_ip }}</h1>
+        <a class="download-link" href="{{ url_for('download') }}">Download JSON</a>
+        <div class="article-grid">
+            {% for article_id, article in articles.items() %}
+                <div class="article">
+                    <h2>{{ article.title }}</h2>
+                    <p><strong>Category:</strong> {{ article.category.capitalize() }}</p>
+                    <p><strong>URL:</strong> <a href="{{ article.url }}" target="_blank">{{ article.url }}</a></p>
+                    <p><strong>Summary:</strong> {{ article.summary }}</p>
+                    <p><strong>Publish Date:</strong> {{ article.publish_date }}</p>
+                    <p><strong>Image:</strong><br> <img src="{{ article.image_url }}" alt="{{ article.title }}"></p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
