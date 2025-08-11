@@ -1,7 +1,6 @@
 # Text Summarizer Flask Application
 
 This Flask application allows users to input text, generate summaries using a BART-based model, and save the inputs and summaries to a SQLite database. It also includes functionality to fine-tune the summarization model with user-provided data.
-
 ## Features
 
 - **Text Summarization**: Users can input text, which is then summarized using a fine-tuned BART model.
