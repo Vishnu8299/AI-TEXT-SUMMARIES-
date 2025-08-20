@@ -11,7 +11,7 @@ This Flask application allows users to input text, generate summaries using a BA
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/text-summarizer.git
+    git clone https://github.com/vishnu8299/text-summarizer.git
     cd text-summarizer
     ```
 
